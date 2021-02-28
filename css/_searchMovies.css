@@ -1,0 +1,192 @@
+@font-face {
+  font-family: "changa_one_regular";
+  src: url("../fonts/ChangaOne/changaone-regular-webfont.woff2") format("woff2"),
+    url("../fonts/ChangaOne/ChangaOne-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "butler_medium";
+  src: url("../fonts/Butler_Webfont/Butler-Bold.woff2") format("woff2"),
+    url("../fonts/Butler_Webfont/Butler-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "handlee";
+  src: url("../fonts/handlee/handlee-regular-webfont.woff2") format("woff2"),
+    url("../fonts/handlee/handlee-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "pettingill_cfbold";
+  src: url("../fonts/PettingillCF-Bold/pettingillcf-bold.woff2") format("woff2"),
+    url("../fonts/PettingillCF-Bold/pettingillcf-bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  --black: rgba(7, 7, 7, 0.7);
+  --background-black: rgb(46, 42, 42);
+  --someWhite: rgb(231, 231, 231);
+  --lgt-blue: #3ece69;
+  --drk-blue: #147ec1;
+  --blue: #159ce4;
+}
+
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: butler_medium, Arial, pettingill_cfbold;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+input {
+  font-family: butler_medium, Arial, pettingill_cfbold;
+  font-style: normal;
+  font-weight: normal;
+  font-size: var(--black);
+  -moz-transform: scale(1.1) translate(-1px, 0px) skew(-10deg, 0deg);
+  -webkit-transform: scale(1.1) translate(-1px, 0px) skew(-10deg, 0deg);
+  -o-transform: scale(1.1) translate(-1px, 0px) skew(-10deg, 0deg);
+  -ms-transform: scale(1.1) translate(-1px, 0px) skew(-10deg, 0deg);
+  transform: scale(1.1) translate(-1px, 0px) skew(-10deg, 0deg);
+  border: 1px solid rgba(28, 110, 164, 0.28);
+  border-radius: 13px 13px 13px 13px;
+  height: 30px;
+  width: 300px;
+  padding-left: 10px;
+}
+
+input:focus {
+  outline: none;
+  transition: all 0.3s ease;
+  color: rgb(138, 138, 170);
+  box-shadow: 0 0 0 2px rgba(21, 156, 228, 0.4);
+  padding: 10px;
+}
+
+/*main section*/
+main {
+  width: 1200px;
+  max-width: 100%;
+}
+
+#movie-container {
+  display: flex;
+  width: 100%;
+  padding: 1.2em 1.9em;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1020px) {
+  #movie-container > .movie {
+    flex: 270px;
+    flex-grow: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  #movie-container {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .movie {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.movie {
+  padding: 1em;
+  flex: 0 0 270px;
+  position: relative;
+}
+
+.movie__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  flex: 0 0 300px;
+  border-radius: 1%;
+  padding-bottom: 0.7em;
+  -webkit-box-shadow: #fff 0 -1px 4px, #a3a1ff 0 -2px 10px, #c2cbff 0 -10px 20px,
+    #c2cbff 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: #fff 0 -1px 4px, #a3a1ff 0 -2px 10px, #c2cbff 0 -10px 20px,
+    #c2cbff 0 -18px 40px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+p.name {
+  margin-left: 1em;
+  margin-top: 1em;
+}
+
+.movie__card p {
+  font-size: 14px;
+  opacity: 0.8;
+  line-height: 1.5;
+  padding: 0 3px;
+}
+
+.movie__card-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  border-bottom: 1px solid rgba(7, 7, 7, 0.2);
+  padding-bottom: 1.2em;
+  margin-top: 0.7em;
+}
+
+.movie__card-img img {
+  width: 210px;
+  height: 300px;
+  margin: 0;
+}
+
+.close {
+  position: absolute;
+  right: 14px;
+  top: 11px;
+  width: 14px;
+  height: 13px;
+  opacity: 1;
+  border: 1px solid rgb(165, 12, 12);
+}
+.close:hover {
+  opacity: 0.5;
+}
+.close:before,
+.close:after {
+  position: absolute;
+  left: 5px;
+  content: " ";
+  height: 12px;
+  width: 2px;
+  background-color: rgb(165, 12, 12);
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.hidden {
+  display: none;
+}
