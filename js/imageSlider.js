@@ -61,7 +61,7 @@ function slideImages() {
 function intervalStart(slider) {
   setInterval(() => {
     slider();
-  }, 1000);
+  }, 5000);
 }
 
 var sliderStart = function (sliderImages) {
